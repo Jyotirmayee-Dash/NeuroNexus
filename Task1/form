@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Registration Form</title>
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      /* --form-bg: ; */
+      --page-bg: #4276de;
+      --text-color: #1f2937;
+      --label-color: #374151;
+      --border-radius: 8px;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--page-bg);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .form-wrapper {
+      background: linear-gradient(135deg, #ffafcc, #b388eb);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 550px;
+    }
+
+    .form-wrapper h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+      color: var(--text-color);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--label-color);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      font-size: 15px;
+      transition: border 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary-color);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .gender-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .gender-group label {
+      font-weight: normal;
+    }
+
+    .form-wrapper button {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .form-wrapper button:hover {
+      background-color: #4338ca;
+      transform: translateY(-2px);
+    }
+
+    .form-wrapper button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+      .form-wrapper {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-wrapper">
+    <h1>Registration Form</h1>
+    <form>
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required />
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" required />
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" required></textarea>
+
+      <label for="company">Company Name</label>
+      <input type="text" id="company" name="company" />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="department">Department</label>
+      <select id="department" name="department" required>
+        <option value="">-- Select Department --</option>
+        <option value="HR">HR</option>
+        <option value="Sales">Sales</option>
+        <option value="Development">Development</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <label>Gender</label>
+      <div class="gender-group">
+        <input type="radio" id="male" name="gender" value="Male" required />
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female" />
+        <label for="female">Female</label>
+
+        <input type="radio" id="prefer_not_say" name="gender" value="Prefer not to say" />
+        <label for="prefer_not_say">Prefer not to say</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+
